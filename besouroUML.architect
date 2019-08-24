@@ -713,7 +713,7 @@
   <table id="TAB196" populated="true" UUID="59ac97f6-29ce-428c-916f-b3757ac8177c" name="localidades" objectType="TABLE" physicalName="localidades" >
    <remarks></remarks>
    <folder id="FOLTAB1961" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL197" populated="true" UUID="165c00ab-2593-4d36-9a5d-273bce34f8eb" autoIncrement="false" autoIncrementSequenceName="localidades_id_endereco_seq_1" defaultValue="" name="id_localidade" nullable="0" physicalName="id_localidade" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+    <column id="COL197" populated="true" UUID="165c00ab-2593-4d36-9a5d-273bce34f8eb" autoIncrement="true" autoIncrementSequenceName="localidades_id_endereco_seq_1" defaultValue="" name="id_localidade" nullable="0" physicalName="id_localidade" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
      <remarks></remarks>
     </column>
     <column id="COL198" populated="true" UUID="4016f983-3f82-4167-9cc6-f152efe5fe89" autoIncrement="false" autoIncrementSequenceName="localidades_bairro_seq" defaultValue="" name="pais" nullable="1" physicalName="pais" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -755,7 +755,7 @@
    <relationship id="REL213" populated="true" UUID="921b924f-9034-4ce0-a024-344e97c0833b" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="localidades_pessoas_fk" physicalName="localidades_pessoas_fk" pk-table-ref="TAB18" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP214" populated="true" UUID="22a96772-c72d-43e5-822d-16e32a06f271" fk-column-ref="COL14" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL19" />
    </relationship>
-   <relationship id="REL215" populated="true" UUID="6ca2414e-7d77-4e5c-8d47-8c1687aafe63" deferrability="7" deleteRule="3" fk-table-ref="TAB110" fkCardinality="7" identifying="true" name="localidades_instituição_fk" physicalName="localidades_institui__o_fk" pk-table-ref="TAB18" pkCardinality="2" updateRule="3" >
+   <relationship id="REL215" populated="true" UUID="6ca2414e-7d77-4e5c-8d47-8c1687aafe63" deferrability="7" deleteRule="3" fk-table-ref="TAB110" fkCardinality="7" identifying="true" name="localidades_instituição_fk" physicalName="localidades_instituição_fk" pk-table-ref="TAB18" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP216" populated="true" UUID="bccef601-cfba-4cfb-804a-dc785766218c" fk-column-ref="COL112" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL19" />
    </relationship>
    <relationship id="REL217" populated="true" UUID="4d2f6678-4cf6-43a4-bcd4-e8332e34b818" deferrability="7" deleteRule="3" fk-table-ref="TAB140" fkCardinality="7" identifying="false" name="localidades_registro_fk" physicalName="localidades_registro_fk" pk-table-ref="TAB18" pkCardinality="2" updateRule="3" >
@@ -818,10 +818,10 @@
    <relationship id="REL255" populated="true" UUID="deac3d30-46f8-4669-ae6b-34eb26d20e1d" deferrability="7" deleteRule="3" fk-table-ref="TAB190" fkCardinality="7" identifying="true" name="trabalhos_trabalhos_registros_fk" physicalName="trabalhos_trabalhos_registros_fk" pk-table-ref="TAB93" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP256" populated="true" UUID="79c6b8f7-46be-43fb-ab96-06267b721ed8" fk-column-ref="COL193" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL94" />
    </relationship>
-   <relationship id="REL257" populated="true" UUID="88b78a9a-00a8-4575-8c49-473ea38bffb5" deferrability="7" deleteRule="3" fk-table-ref="TAB123" fkCardinality="7" identifying="true" name="instituição_colecao_fk" physicalName="institui__o_colecao_fk" pk-table-ref="TAB110" pkCardinality="2" updateRule="3" >
+   <relationship id="REL257" populated="true" UUID="88b78a9a-00a8-4575-8c49-473ea38bffb5" deferrability="7" deleteRule="3" fk-table-ref="TAB123" fkCardinality="7" identifying="true" name="instituição_colecao_fk" physicalName="instituição_colecao_fk" pk-table-ref="TAB110" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP258" populated="true" UUID="a24f9d8e-4b6a-48ba-85f8-ef4c4a4bfb65" fk-column-ref="COL125" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL111" />
    </relationship>
-   <relationship id="REL259" populated="true" UUID="a44b46a3-b765-4ffa-a7df-8b44a1077300" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="true" name="instituição_pessoas_fk" physicalName="institui__o_pessoas_fk" pk-table-ref="TAB110" pkCardinality="2" updateRule="3" >
+   <relationship id="REL259" populated="true" UUID="a44b46a3-b765-4ffa-a7df-8b44a1077300" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="true" name="instituição_pessoas_fk" physicalName="instituição_pessoas_fk" pk-table-ref="TAB110" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP260" populated="true" UUID="9eb07f32-a62a-474a-830b-6739e9625488" fk-column-ref="COL3" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL111" />
    </relationship>
    <relationship id="REL261" populated="true" UUID="ff1deaef-fb36-4a2b-bffd-0b82ed071432" deferrability="7" deleteRule="3" fk-table-ref="TAB36" fkCardinality="7" identifying="true" name="colecao_especimes_fk" physicalName="colecao_especimes_fk" pk-table-ref="TAB123" pkCardinality="2" updateRule="3" >
@@ -859,10 +859,10 @@
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="0.8408964152537128" viewportX="673" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="0.8408964152537128" viewportX="663" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB1" x="521" y="20" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB18" x="1127" y="349" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB26" x="463" y="1528" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
@@ -886,7 +886,7 @@
   <table-pane table-ref="TAB178" x="839" y="2398" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB184" x="1402" y="533" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB190" x="811" y="884" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB196" x="1163" y="54" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB196" x="1134" y="54" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-link relationship-ref="REL249" pkConnection="0.5" fkConnection="0.5616438356164384" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL225" pkConnection="0.792156862745098" fkConnection="0.32432432432432434" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
   <table-link relationship-ref="REL211" pkConnection="0.5186721991701245" fkConnection="0.48333333333333334" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
