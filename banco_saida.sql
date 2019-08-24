@@ -1,3 +1,4 @@
+CREATE SCHEMA biologia;
 
 CREATE SEQUENCE biologia.reinos_id_seq;
 
