@@ -162,7 +162,6 @@ CREATE TABLE public.instituicao (
                 website VARCHAR,
                 redes_sociais VARCHAR,
                 fax VARCHAR,
-                endereco VARCHAR,
                 CONSTRAINT instituicao_pk PRIMARY KEY (id_instituicao)
 );
 
