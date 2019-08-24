@@ -427,9 +427,6 @@
     <column id="COL119" populated="true" UUID="64142061-2a1b-481d-b8b5-37f2137f98da" autoIncrement="false" autoIncrementSequenceName="instituicao_fax_seq" defaultValue="" name="fax" nullable="1" physicalName="fax" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL120" populated="true" UUID="d081edd9-eda9-4cc3-ac81-b397b3f95920" autoIncrement="false" autoIncrementSequenceName="instituicao_endereco_seq" defaultValue="" name="endereco" nullable="1" physicalName="endereco" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
-    </column>
     </folder>
     <folder id="FOLTAB1123" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
     </folder>
