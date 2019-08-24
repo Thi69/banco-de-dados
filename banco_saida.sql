@@ -1,12 +1,16 @@
 
+CREATE SEQUENCE public.localidades_id_endereco_seq_1;
+
 CREATE TABLE public.localidades (
-                id_localidade BIGINT NOT NULL,
+                id_localidade BIGINT NOT NULL DEFAULT nextval('public.localidades_id_endereco_seq_1'),
                 pais VARCHAR,
                 estado VARCHAR,
                 cidade VARCHAR,
                 CONSTRAINT localidades_pk PRIMARY KEY (id_localidade)
 );
 
+
+ALTER SEQUENCE public.localidades_id_endereco_seq_1 OWNED BY public.localidades.id_localidade;
 
 CREATE SEQUENCE public.reinos_id_seq;
 
