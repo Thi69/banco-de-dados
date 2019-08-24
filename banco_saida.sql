@@ -2,6 +2,7 @@ DROP SCHEMA IF EXISTS public CASCADE;
 
 CREATE SCHEMA public;
 
+
 CREATE SEQUENCE public.localidades_id_endereco_seq_1;
 
 CREATE TABLE public.localidades (
@@ -273,6 +274,7 @@ CREATE TABLE public.especimes (
                 elevacao_minima DOUBLE PRECISION,
                 elevacao_maxima DOUBLE PRECISION,
                 longitude DOUBLE PRECISION,
+                qtd_especimes_pin INTEGER,
                 CONSTRAINT especimes_pk PRIMARY KEY (id_especimes)
 );
 
