@@ -2,7 +2,6 @@ DROP SCHEMA IF EXISTS public CASCADE;
 
 CREATE SCHEMA public;
 
-
 CREATE SEQUENCE public.localidades_id_endereco_seq_1;
 
 CREATE TABLE public.localidades (
