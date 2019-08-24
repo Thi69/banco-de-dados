@@ -1,4 +1,12 @@
-CREATE SCHEMA public;
+
+CREATE TABLE public.localidades (
+                id_localidade BIGINT NOT NULL,
+                pais VARCHAR,
+                estado VARCHAR,
+                cidade VARCHAR,
+                CONSTRAINT localidades_pk PRIMARY KEY (id_localidade)
+);
+
 
 CREATE SEQUENCE public.reinos_id_seq;
 
@@ -138,30 +146,31 @@ ALTER SEQUENCE public.subgeneros_id_subgenero_seq_1 OWNED BY public.subgeneros.i
 
 CREATE SEQUENCE public.localidades_id_seq_1;
 
-CREATE TABLE public.localidades (
-                id_localidade BIGINT NOT NULL DEFAULT nextval('public.localidades_id_seq_1'),
-                pais VARCHAR NOT NULL,
-                estado VARCHAR,
+CREATE TABLE public.enderecos (
+                id_endereco BIGINT NOT NULL DEFAULT nextval('public.localidades_id_seq_1'),
+                id_localidade BIGINT NOT NULL,
                 bairro VARCHAR,
-                cidade VARCHAR,
                 logradouro VARCHAR,
-                descricao VARCHAR,
-                CONSTRAINT localidades_pk PRIMARY KEY (id_localidade)
+                outro VARCHAR,
+                CONSTRAINT enderecos_pk PRIMARY KEY (id_endereco)
 );
 
 
-ALTER SEQUENCE public.localidades_id_seq_1 OWNED BY public.localidades.id_localidade;
+ALTER SEQUENCE public.localidades_id_seq_1 OWNED BY public.enderecos.id_endereco;
 
 CREATE SEQUENCE public.instituicao_id_instituicao_seq;
 
 CREATE TABLE public.instituicao (
                 id_instituicao BIGINT NOT NULL DEFAULT nextval('public.instituicao_id_instituicao_seq'),
-                id_localidade BIGINT NOT NULL,
+                id_endereco BIGINT NOT NULL,
                 nome VARCHAR NOT NULL,
                 telefone VARCHAR,
                 website VARCHAR,
                 redes_sociais VARCHAR,
                 fax VARCHAR,
+                endereco VARCHAR,
+                anotacao VARCHAR,
+                acronimo VARCHAR,
                 CONSTRAINT instituicao_pk PRIMARY KEY (id_instituicao)
 );
 
@@ -174,7 +183,7 @@ CREATE TABLE public.colecao (
                 website VARCHAR,
                 anotacao VARCHAR,
                 colecao_pessoal BOOLEAN NOT NULL,
-                id_localidade BIGINT,
+                id_endereco BIGINT,
                 acronimo VARCHAR,
                 nome_completo VARCHAR NOT NULL,
                 CONSTRAINT colecao_pk PRIMARY KEY (id_colecao)
@@ -196,7 +205,7 @@ CREATE TABLE public.pessoas (
                 instituicao VARCHAR,
                 cargo VARCHAR,
                 telefone_de_trabalho VARCHAR,
-                id_localidade BIGINT,
+                id_endereco BIGINT,
                 anotacao VARCHAR,
                 CONSTRAINT pessoas_pk PRIMARY KEY (id_pessoa)
 );
@@ -214,7 +223,7 @@ CREATE TABLE public.registro (
                 tamanho INTEGER NOT NULL,
                 observacao VARCHAR,
                 id_pessoa BIGINT NOT NULL,
-                id_localidade BIGINT NOT NULL,
+                id_endereco BIGINT NOT NULL,
                 CONSTRAINT id_registro PRIMARY KEY (id_registro)
 );
 
@@ -284,7 +293,7 @@ CREATE TABLE public.trabalhos (
                 ano_publicacao INTEGER,
                 editora VARCHAR,
                 tipo_trabalho VARCHAR,
-                id_localidade BIGINT NOT NULL,
+                id_endereco BIGINT NOT NULL,
                 id_pessoa BIGINT NOT NULL,
                 CONSTRAINT trabalhos_pk PRIMARY KEY (id_trabalho)
 );
@@ -327,6 +336,13 @@ CREATE TABLE public.trabalho_especimes (
 
 
 ALTER SEQUENCE public.trabalho_especimes_id_trabalho_especime_seq OWNED BY public.trabalho_especimes.id_trabalho_especime;
+
+ALTER TABLE public.enderecos ADD CONSTRAINT localidades_enderecos_fk
+FOREIGN KEY (id_localidade)
+REFERENCES public.localidades (id_localidade)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
 
 ALTER TABLE public.filos ADD CONSTRAINT reinos_filos_fk
 FOREIGN KEY (id_reino)
@@ -448,36 +464,36 @@ ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE public.trabalhos ADD CONSTRAINT localidades_trabalhos_fk
-FOREIGN KEY (id_localidade)
-REFERENCES public.localidades (id_localidade)
+FOREIGN KEY (id_endereco)
+REFERENCES public.enderecos (id_endereco)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE public.pessoas ADD CONSTRAINT localidades_pessoas_fk
-FOREIGN KEY (id_localidade)
-REFERENCES public.localidades (id_localidade)
+FOREIGN KEY (id_endereco)
+REFERENCES public.enderecos (id_endereco)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE public.instituicao ADD CONSTRAINT localidades_institui__o_fk
-FOREIGN KEY (id_localidade)
-REFERENCES public.localidades (id_localidade)
+FOREIGN KEY (id_endereco)
+REFERENCES public.enderecos (id_endereco)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE public.registro ADD CONSTRAINT localidades_registro_fk
-FOREIGN KEY (id_localidade)
-REFERENCES public.localidades (id_localidade)
+FOREIGN KEY (id_endereco)
+REFERENCES public.enderecos (id_endereco)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE public.colecao ADD CONSTRAINT localidades_colecao_fk
-FOREIGN KEY (id_localidade)
-REFERENCES public.localidades (id_localidade)
+FOREIGN KEY (id_endereco)
+REFERENCES public.enderecos (id_endereco)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
