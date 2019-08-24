@@ -52,7 +52,7 @@
     <column id="COL14" populated="true" UUID="9afc1846-ec58-4f4f-8679-2e3d017a8fb0" autoIncrement="false" autoIncrementSequenceName="localidades_id_seq" defaultValue="" name="id_localidade" nullable="1" physicalName="id_localidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
      <remarks></remarks>
     </column>
-    <column id="COL15" populated="true" UUID="caa8aa23-4748-4d95-8675-ed37d514b9e9" autoIncrement="false" autoIncrementSequenceName="pessoas_anotação_seq" defaultValue="" name="anotação" nullable="1" physicalName="anotação" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL15" populated="true" UUID="caa8aa23-4748-4d95-8675-ed37d514b9e9" autoIncrement="false" autoIncrementSequenceName="pessoas_anotacao_seq" defaultValue="" name="anotacao" nullable="1" physicalName="anotacao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     </folder>
