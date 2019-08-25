@@ -16,7 +16,7 @@
     <column id="COL2" populated="true" UUID="90121927-b707-4d71-80e7-4929e524f4c5" autoIncrement="true" autoIncrementSequenceName="pessoas_id_seq" defaultValue="" name="id_pessoa" nullable="0" physicalName="id_pessoa" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
      <remarks></remarks>
     </column>
-    <column id="COL3" populated="true" UUID="27b67038-c92d-4b01-8bab-47e9fed42e05" autoIncrement="false" autoIncrementSequenceName="instituição_id_instituicao_seq" defaultValue="" name="id_instituicao" nullable="0" physicalName="id_instituicao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+    <column id="COL3" populated="true" UUID="27b67038-c92d-4b01-8bab-47e9fed42e05" autoIncrement="false" autoIncrementSequenceName="instituição_id_instituicao_seq" defaultValue="" name="id_instituicao" nullable="1" physicalName="id_instituicao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
      <remarks></remarks>
     </column>
     <column id="COL4" populated="true" UUID="02bb7adb-6f14-4771-9555-8e40e88e2014" autoIncrement="false" autoIncrementSequenceName="pessoas_short_name_seq" defaultValue="" name="short_name" nullable="1" physicalName="short_name" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -719,7 +719,7 @@
   <table id="TAB198" populated="true" UUID="59ac97f6-29ce-428c-916f-b3757ac8177c" name="localidades" objectType="TABLE" physicalName="localidades" >
    <remarks></remarks>
    <folder id="FOLTAB1981" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL199" populated="true" UUID="165c00ab-2593-4d36-9a5d-273bce34f8eb" autoIncrement="true" autoIncrementSequenceName="localidades_id_endereco_seq_1" defaultValue="" name="id_localidade" nullable="0" physicalName="id_localidade" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+    <column id="COL199" populated="true" UUID="165c00ab-2593-4d36-9a5d-273bce34f8eb" autoIncrement="true" autoIncrementSequenceName="localidades_id_endereco_seq_1_1" defaultValue="" name="id_localidade" nullable="0" physicalName="id_localidade" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
      <remarks></remarks>
     </column>
     <column id="COL200" populated="true" UUID="4016f983-3f82-4167-9cc6-f152efe5fe89" autoIncrement="false" autoIncrementSequenceName="localidades_bairro_seq" defaultValue="" name="pais" nullable="1" physicalName="pais" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -761,7 +761,7 @@
    <relationship id="REL215" populated="true" UUID="921b924f-9034-4ce0-a024-344e97c0833b" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="false" name="localidades_pessoas_fk" physicalName="localidades_pessoas_fk" pk-table-ref="TAB18" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP216" populated="true" UUID="22a96772-c72d-43e5-822d-16e32a06f271" fk-column-ref="COL14" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL19" />
    </relationship>
-   <relationship id="REL217" populated="true" UUID="6ca2414e-7d77-4e5c-8d47-8c1687aafe63" deferrability="7" deleteRule="3" fk-table-ref="TAB111" fkCardinality="7" identifying="true" name="localidades_instituição_fk" physicalName="localidades_instituição_fk" pk-table-ref="TAB18" pkCardinality="2" updateRule="3" >
+   <relationship id="REL217" populated="true" UUID="6ca2414e-7d77-4e5c-8d47-8c1687aafe63" deferrability="7" deleteRule="3" fk-table-ref="TAB111" fkCardinality="7" identifying="true" name="localidades_instituição_fk" physicalName="localidades_institui__o_fk" pk-table-ref="TAB18" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP218" populated="true" UUID="bccef601-cfba-4cfb-804a-dc785766218c" fk-column-ref="COL114" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL19" />
    </relationship>
    <relationship id="REL219" populated="true" UUID="4d2f6678-4cf6-43a4-bcd4-e8332e34b818" deferrability="7" deleteRule="3" fk-table-ref="TAB142" fkCardinality="7" identifying="false" name="localidades_registro_fk" physicalName="localidades_registro_fk" pk-table-ref="TAB18" pkCardinality="2" updateRule="3" >
@@ -824,10 +824,10 @@
    <relationship id="REL257" populated="true" UUID="deac3d30-46f8-4669-ae6b-34eb26d20e1d" deferrability="7" deleteRule="3" fk-table-ref="TAB192" fkCardinality="7" identifying="true" name="trabalhos_trabalhos_registros_fk" physicalName="trabalhos_trabalhos_registros_fk" pk-table-ref="TAB94" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP258" populated="true" UUID="79c6b8f7-46be-43fb-ab96-06267b721ed8" fk-column-ref="COL195" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL95" />
    </relationship>
-   <relationship id="REL259" populated="true" UUID="88b78a9a-00a8-4575-8c49-473ea38bffb5" deferrability="7" deleteRule="3" fk-table-ref="TAB125" fkCardinality="7" identifying="true" name="instituição_colecao_fk" physicalName="instituição_colecao_fk" pk-table-ref="TAB111" pkCardinality="2" updateRule="3" >
+   <relationship id="REL259" populated="true" UUID="88b78a9a-00a8-4575-8c49-473ea38bffb5" deferrability="7" deleteRule="3" fk-table-ref="TAB125" fkCardinality="7" identifying="true" name="instituição_colecao_fk" physicalName="institui__o_colecao_fk" pk-table-ref="TAB111" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP260" populated="true" UUID="a24f9d8e-4b6a-48ba-85f8-ef4c4a4bfb65" fk-column-ref="COL127" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL112" />
    </relationship>
-   <relationship id="REL261" populated="true" UUID="a44b46a3-b765-4ffa-a7df-8b44a1077300" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="true" name="instituição_pessoas_fk" physicalName="instituição_pessoas_fk" pk-table-ref="TAB111" pkCardinality="2" updateRule="3" >
+   <relationship id="REL261" populated="true" UUID="a44b46a3-b765-4ffa-a7df-8b44a1077300" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="true" name="instituição_pessoas_fk" physicalName="institui__o_pessoas_fk" pk-table-ref="TAB111" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP262" populated="true" UUID="9eb07f32-a62a-474a-830b-6739e9625488" fk-column-ref="COL3" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL112" />
    </relationship>
    <relationship id="REL263" populated="true" UUID="ff1deaef-fb36-4a2b-bffd-0b82ed071432" deferrability="7" deleteRule="3" fk-table-ref="TAB36" fkCardinality="7" identifying="true" name="colecao_especimes_fk" physicalName="colecao_especimes_fk" pk-table-ref="TAB125" pkCardinality="2" updateRule="3" >
@@ -868,10 +868,10 @@
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="public"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="0.8408964152537128" viewportX="664" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="0.8408964152537128" viewportX="293" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB1" x="521" y="20" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB18" x="1127" y="349" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB26" x="463" y="1528" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
