@@ -169,7 +169,8 @@ CREATE SEQUENCE public.instituicao_id_instituicao_seq;
 
 CREATE TABLE public.instituicao (
                 id_instituicao BIGINT NOT NULL DEFAULT nextval('public.instituicao_id_instituicao_seq'),
-                id_endereco BIGINT NOT NULL,
+                id_localidade BIGINT NOT NULL,
+                id_endereco BIGINT,
                 nome VARCHAR NOT NULL,
                 telefone VARCHAR,
                 website VARCHAR,
@@ -346,6 +347,13 @@ CREATE TABLE public.trabalho_especimes (
 ALTER SEQUENCE public.trabalho_especimes_id_trabalho_especime_seq OWNED BY public.trabalho_especimes.id_trabalho_especime;
 
 ALTER TABLE public.enderecos ADD CONSTRAINT localidades_enderecos_fk
+FOREIGN KEY (id_localidade)
+REFERENCES public.localidades (id_localidade)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
+ALTER TABLE public.instituicao ADD CONSTRAINT localidades_instituicao_fk
 FOREIGN KEY (id_localidade)
 REFERENCES public.localidades (id_localidade)
 ON DELETE NO ACTION
