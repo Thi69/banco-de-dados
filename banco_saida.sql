@@ -2,6 +2,7 @@ DROP SCHEMA IF EXISTS public CASCADE;
 
 CREATE SCHEMA public;
 
+
 CREATE SEQUENCE public.localidades_id_endereco_seq_1_1;
 
 CREATE TABLE public.localidades (
@@ -19,7 +20,7 @@ CREATE SEQUENCE public.reinos_id_seq;
 
 CREATE TABLE public.reinos (
                 id_reino BIGINT NOT NULL DEFAULT nextval('public.reinos_id_seq'),
-                nome VARCHAR NOT NULL,
+                nome VARCHAR,
                 CONSTRAINT reinos_pk PRIMARY KEY (id_reino)
 );
 
@@ -30,8 +31,8 @@ CREATE SEQUENCE public.filos_id_seq;
 
 CREATE TABLE public.filos (
                 id_filo BIGINT NOT NULL DEFAULT nextval('public.filos_id_seq'),
-                nome VARCHAR NOT NULL,
-                id_reino BIGINT NOT NULL,
+                nome VARCHAR,
+                id_reino BIGINT,
                 CONSTRAINT filos_pk PRIMARY KEY (id_filo)
 );
 
@@ -42,8 +43,8 @@ CREATE SEQUENCE public.classes_id_seq;
 
 CREATE TABLE public.classes (
                 id_classe BIGINT NOT NULL DEFAULT nextval('public.classes_id_seq'),
-                nome VARCHAR NOT NULL,
-                id_filo BIGINT NOT NULL,
+                nome VARCHAR,
+                id_filo BIGINT,
                 CONSTRAINT classes_pk PRIMARY KEY (id_classe)
 );
 
@@ -54,8 +55,8 @@ CREATE SEQUENCE public.ordens_id_seq_1;
 
 CREATE TABLE public.ordens (
                 id_ordem BIGINT NOT NULL DEFAULT nextval('public.ordens_id_seq_1'),
-                nome VARCHAR NOT NULL,
-                id_classe BIGINT NOT NULL,
+                nome VARCHAR,
+                id_classe BIGINT,
                 CONSTRAINT ordens_pk PRIMARY KEY (id_ordem)
 );
 
@@ -66,8 +67,8 @@ CREATE SEQUENCE public.familias_id_seq;
 
 CREATE TABLE public.familias (
                 id_familia BIGINT NOT NULL DEFAULT nextval('public.familias_id_seq'),
-                nome VARCHAR NOT NULL,
-                id_ordem BIGINT NOT NULL,
+                nome VARCHAR,
+                id_ordem BIGINT,
                 CONSTRAINT familias_pk PRIMARY KEY (id_familia)
 );
 
@@ -78,8 +79,8 @@ CREATE SEQUENCE public.subfamilias_id_subfamilia_seq_2;
 
 CREATE TABLE public.subfamilias (
                 id_subfamilia BIGINT NOT NULL DEFAULT nextval('public.subfamilias_id_subfamilia_seq_2'),
-                nome VARCHAR NOT NULL,
-                id_familia BIGINT NOT NULL,
+                nome VARCHAR,
+                id_familia BIGINT,
                 CONSTRAINT subfamilias_pk PRIMARY KEY (id_subfamilia)
 );
 
@@ -90,8 +91,8 @@ CREATE SEQUENCE public.supertribos_id_supertribo_seq;
 
 CREATE TABLE public.supertribos (
                 id_supertribo BIGINT NOT NULL DEFAULT nextval('public.supertribos_id_supertribo_seq'),
-                nome VARCHAR NOT NULL,
-                id_familia BIGINT NOT NULL,
+                nome VARCHAR,
+                id_familia BIGINT,
                 id_subfamilia BIGINT,
                 CONSTRAINT supertribos_pk PRIMARY KEY (id_supertribo)
 );
@@ -103,9 +104,9 @@ CREATE SEQUENCE public.tribos_id_tribo_seq;
 
 CREATE TABLE public.tribos (
                 id_tribo BIGINT NOT NULL DEFAULT nextval('public.tribos_id_tribo_seq'),
-                nome VARCHAR NOT NULL,
+                nome VARCHAR,
                 id_supertribo BIGINT,
-                id_familia BIGINT NOT NULL,
+                id_familia BIGINT,
                 id_subfamilia BIGINT,
                 CONSTRAINT tribos_pk PRIMARY KEY (id_tribo)
 );
@@ -117,8 +118,8 @@ CREATE SEQUENCE public.subtribos_id_subtribo_seq;
 
 CREATE TABLE public.subtribos (
                 id_subtribo BIGINT NOT NULL DEFAULT nextval('public.subtribos_id_subtribo_seq'),
-                nome VARCHAR NOT NULL,
-                id_tribo BIGINT NOT NULL,
+                nome VARCHAR,
+                id_tribo BIGINT,
                 CONSTRAINT id_subtribo PRIMARY KEY (id_subtribo)
 );
 
@@ -129,8 +130,8 @@ CREATE SEQUENCE public.generos_id_seq_1;
 
 CREATE TABLE public.generos (
                 id_genero BIGINT NOT NULL DEFAULT nextval('public.generos_id_seq_1'),
-                nome VARCHAR NOT NULL,
-                id_familia BIGINT NOT NULL,
+                nome VARCHAR,
+                id_familia BIGINT,
                 id_subtribo BIGINT,
                 id_tribo BIGINT,
                 CONSTRAINT generos_pk PRIMARY KEY (id_genero)
@@ -143,8 +144,8 @@ CREATE SEQUENCE public.subgeneros_id_subgenero_seq_1;
 
 CREATE TABLE public.subgeneros (
                 id_subgenero BIGINT NOT NULL DEFAULT nextval('public.subgeneros_id_subgenero_seq_1'),
-                nome VARCHAR NOT NULL,
-                id_genero BIGINT NOT NULL,
+                nome VARCHAR,
+                id_genero BIGINT,
                 CONSTRAINT id_subgenero PRIMARY KEY (id_subgenero)
 );
 
@@ -155,7 +156,7 @@ CREATE SEQUENCE public.localidades_id_seq_1;
 
 CREATE TABLE public.enderecos (
                 id_endereco BIGINT NOT NULL DEFAULT nextval('public.localidades_id_seq_1'),
-                id_localidade BIGINT NOT NULL,
+                id_localidade BIGINT,
                 bairro VARCHAR,
                 logradouro VARCHAR,
                 outro VARCHAR,
@@ -171,7 +172,7 @@ CREATE TABLE public.instituicao (
                 id_instituicao BIGINT NOT NULL DEFAULT nextval('public.instituicao_id_instituicao_seq'),
                 id_localidade BIGINT,
                 id_endereco BIGINT,
-                nome VARCHAR NOT NULL,
+                nome VARCHAR,
                 telefone VARCHAR,
                 website VARCHAR,
                 redes_sociais VARCHAR,
@@ -190,10 +191,10 @@ CREATE TABLE public.colecao (
                 id_instituicao BIGINT,
                 website VARCHAR,
                 anotacao VARCHAR,
-                colecao_pessoal BOOLEAN NOT NULL,
+                colecao_pessoal BOOLEAN,
                 id_endereco BIGINT,
                 acronimo VARCHAR,
-                nome_completo VARCHAR NOT NULL,
+                nome_completo VARCHAR,
                 CONSTRAINT colecao_pk PRIMARY KEY (id_colecao)
 );
 
@@ -205,9 +206,9 @@ CREATE TABLE public.pessoas (
                 id_instituicao BIGINT,
                 short_name VARCHAR,
                 apelido VARCHAR,
-                full_name VARCHAR NOT NULL,
+                full_name VARCHAR,
                 abreviacao_sobrenome VARCHAR,
-                nacionalidade VARCHAR NOT NULL,
+                nacionalidade VARCHAR,
                 email VARCHAR,
                 telefone VARCHAR,
                 instituicao VARCHAR,
@@ -225,13 +226,13 @@ CREATE SEQUENCE public.registro_id_registro_seq_1;
 
 CREATE TABLE public.registro (
                 id_registro VARCHAR NOT NULL DEFAULT nextval('public.registro_id_registro_seq_1'),
-                nome VARCHAR NOT NULL,
-                tipo VARCHAR NOT NULL,
-                link VARCHAR NOT NULL,
-                tamanho INTEGER NOT NULL,
+                nome VARCHAR,
+                tipo VARCHAR,
+                link VARCHAR,
+                tamanho INTEGER,
                 observacao VARCHAR,
-                id_pessoa BIGINT NOT NULL,
-                id_endereco BIGINT NOT NULL,
+                id_pessoa BIGINT,
+                id_endereco BIGINT,
                 CONSTRAINT id_registro PRIMARY KEY (id_registro)
 );
 
@@ -242,10 +243,10 @@ CREATE SEQUENCE public.especies_id_seq;
 
 CREATE TABLE public.especies (
                 id_especie BIGINT NOT NULL DEFAULT nextval('public.especies_id_seq'),
-                id_pessoa BIGINT NOT NULL,
-                nome VARCHAR NOT NULL,
-                id_genero BIGINT NOT NULL,
-                e_sinonimo BOOLEAN NOT NULL,
+                id_pessoa BIGINT,
+                nome VARCHAR,
+                id_genero BIGINT,
+                e_sinonimo BOOLEAN,
                 Parent_id_especie BIGINT,
                 id_subgenero BIGINT,
                 CONSTRAINT especies_pk PRIMARY KEY (id_especie)
@@ -258,9 +259,9 @@ CREATE SEQUENCE public.especimes_id_seq_1;
 
 CREATE TABLE public.especimes (
                 id_especimes BIGINT NOT NULL DEFAULT nextval('public.especimes_id_seq_1'),
-                id_pessoa BIGINT NOT NULL,
-                id_colecao BIGINT NOT NULL,
-                id_especie BIGINT NOT NULL,
+                id_pessoa BIGINT,
+                id_colecao BIGINT,
+                id_especie BIGINT,
                 sexo VARCHAR,
                 observacoes VARCHAR,
                 estado_conservacao VARCHAR,
@@ -269,7 +270,7 @@ CREATE TABLE public.especimes (
                 dia_inicio_coleta INTEGER,
                 dia_fim_coleta INTEGER,
                 mes_fim_coleta INTEGER,
-                ano_fim_coleta INTEGER NOT NULL,
+                ano_fim_coleta INTEGER,
                 latitude DOUBLE PRECISION,
                 elevacao_minima DOUBLE PRECISION,
                 elevacao_maxima DOUBLE PRECISION,
@@ -285,8 +286,8 @@ CREATE SEQUENCE public.especimes_registro_id_especimes_registro_seq;
 
 CREATE TABLE public.especimes_registro (
                 id_especimes_registro VARCHAR NOT NULL DEFAULT nextval('public.especimes_registro_id_especimes_registro_seq'),
-                id_registro VARCHAR NOT NULL,
-                id_especimes BIGINT NOT NULL,
+                id_registro VARCHAR,
+                id_especimes BIGINT,
                 CONSTRAINT id_especimes_registro PRIMARY KEY (id_especimes_registro)
 );
 
@@ -297,13 +298,13 @@ CREATE SEQUENCE public.trabalhos_id_seq;
 
 CREATE TABLE public.trabalhos (
                 id_trabalho BIGINT NOT NULL DEFAULT nextval('public.trabalhos_id_seq'),
-                nome VARCHAR NOT NULL,
+                nome VARCHAR,
                 quantidade_paginas INTEGER,
                 ano_publicacao INTEGER,
                 editora VARCHAR,
                 tipo_trabalho VARCHAR,
-                id_endereco BIGINT NOT NULL,
-                id_pessoa BIGINT NOT NULL,
+                id_endereco BIGINT,
+                id_pessoa BIGINT,
                 CONSTRAINT trabalhos_pk PRIMARY KEY (id_trabalho)
 );
 
@@ -314,8 +315,8 @@ CREATE SEQUENCE public.trabalhos_registros_id_seq;
 
 CREATE TABLE public.trabalhos_registros (
                 id BIGINT NOT NULL DEFAULT nextval('public.trabalhos_registros_id_seq'),
-                id_registro VARCHAR NOT NULL,
-                id_trabalho BIGINT NOT NULL,
+                id_registro VARCHAR,
+                id_trabalho BIGINT,
                 CONSTRAINT trabalhos_registros_pk PRIMARY KEY (id)
 );
 
@@ -326,8 +327,8 @@ CREATE SEQUENCE public.auto_tabelas_id_trabalho_seq;
 
 CREATE TABLE public.auto_tabelas (
                 id_auto_trabalho BIGINT NOT NULL DEFAULT nextval('public.auto_tabelas_id_trabalho_seq'),
-                id_trabalho_referencia BIGINT NOT NULL,
-                id_trabalho_atual BIGINT NOT NULL,
+                id_trabalho_referencia BIGINT,
+                id_trabalho_atual BIGINT,
                 CONSTRAINT auto_tabelas_pk PRIMARY KEY (id_auto_trabalho)
 );
 
@@ -338,8 +339,8 @@ CREATE SEQUENCE public.trabalho_especimes_id_trabalho_especime_seq;
 
 CREATE TABLE public.trabalho_especimes (
                 id_trabalho_especime BIGINT NOT NULL DEFAULT nextval('public.trabalho_especimes_id_trabalho_especime_seq'),
-                id_especimes BIGINT NOT NULL,
-                id_trabalho BIGINT NOT NULL,
+                id_especimes BIGINT,
+                id_trabalho BIGINT,
                 CONSTRAINT trabalho_especimes_pk PRIMARY KEY (id_trabalho_especime)
 );
 
