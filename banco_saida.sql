@@ -169,7 +169,7 @@ CREATE SEQUENCE public.instituicao_id_instituicao_seq;
 
 CREATE TABLE public.instituicao (
                 id_instituicao BIGINT NOT NULL DEFAULT nextval('public.instituicao_id_instituicao_seq'),
-                id_localidade BIGINT NOT NULL,
+                id_localidade BIGINT,
                 id_endereco BIGINT,
                 nome VARCHAR NOT NULL,
                 telefone VARCHAR,
