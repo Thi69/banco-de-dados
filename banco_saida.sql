@@ -2,10 +2,10 @@ DROP SCHEMA IF EXISTS public CASCADE;
 
 CREATE SCHEMA public;
 
-CREATE SEQUENCE public.localidades_id_endereco_seq_1;
+CREATE SEQUENCE public.localidades_id_endereco_seq_1_1;
 
 CREATE TABLE public.localidades (
-                id_localidade BIGINT NOT NULL DEFAULT nextval('public.localidades_id_endereco_seq_1'),
+                id_localidade BIGINT NOT NULL DEFAULT nextval('public.localidades_id_endereco_seq_1_1'),
                 pais VARCHAR,
                 estado VARCHAR,
                 cidade VARCHAR,
@@ -13,7 +13,7 @@ CREATE TABLE public.localidades (
 );
 
 
-ALTER SEQUENCE public.localidades_id_endereco_seq_1 OWNED BY public.localidades.id_localidade;
+ALTER SEQUENCE public.localidades_id_endereco_seq_1_1 OWNED BY public.localidades.id_localidade;
 
 CREATE SEQUENCE public.reinos_id_seq;
 
@@ -202,7 +202,7 @@ CREATE SEQUENCE public.pessoas_id_seq;
 
 CREATE TABLE public.pessoas (
                 id_pessoa BIGINT NOT NULL DEFAULT nextval('public.pessoas_id_seq'),
-                id_instituicao BIGINT NOT NULL,
+                id_instituicao BIGINT,
                 short_name VARCHAR,
                 apelido VARCHAR,
                 full_name VARCHAR NOT NULL,
