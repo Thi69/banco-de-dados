@@ -435,44 +435,6 @@
   </info>
   <notepads>
   </notepads>
-  <connection>
-    <name>biologia-database</name>
-    <server>localhost</server>
-    <type>POSTGRESQL</type>
-    <access>Native</access>
-    <database>biologia-database</database>
-    <port>5433</port>
-    <username>postgres</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10bef2fa8f</password>
-    <servername />
-    <data_tablespace />
-    <index_tablespace />
-    <attributes>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>5433</attribute>
-      </attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>biologia-final</name>
-    <server>localhost</server>
-    <type>POSTGRESQL</type>
-    <access>Native</access>
-    <database>biologia-final</database>
-    <port>5433</port>
-    <username>postgres</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10bef2fa8f</password>
-    <servername />
-    <data_tablespace />
-    <index_tablespace />
-    <attributes>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>5433</attribute>
-      </attribute>
-    </attributes>
-  </connection>
   <order>
     <hop>
       <from>entrada.pessoas</from>
@@ -491,7 +453,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <connection>biologia-final</connection>
+    <connection>saida</connection>
     <commit>100</commit>
     <update_bypassed>Y</update_bypassed>
     <lookup>
@@ -545,7 +507,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <connection>biologia-database</connection>
+    <connection>entrada</connection>
     <sql>SELECT
   split_part(author, ',', 1) AS full_name
 , split_part(author, ',', 1) AS short_name

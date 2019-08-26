@@ -436,42 +436,76 @@
   </info>
   <notepads>
   </notepads>
-  <connection>
-    <name>final</name>
-    <server>localhost</server>
+    <connection>
+    <name>entrada</name>
+    <server>${DB_ENTRADA_HOST}</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
-    <database>biologia-final</database>
-    <port>5433</port>
-    <username>postgres</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10bef2fa8f</password>
-    <servername />
-    <data_tablespace />
-    <index_tablespace />
+    <database>${DB_ENTRADA}</database>
+    <port>${DB_ENTRADA_PORT}</port>
+    <username>${DB_ENTRADA_USER}</username>
+    <password>${DB_ENTRADA_PASS}</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
     <attributes>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>5433</attribute>
-      </attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>${DB_ENTRADA_PORT}</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
   <connection>
-    <name>old</name>
-    <server>localhost</server>
+    <name>saida</name>
+    <server>${DB_SAIDA_HOST}</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
-    <database>biologia-database</database>
-    <port>5433</port>
-    <username>postgres</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10bef2fa8f</password>
-    <servername />
-    <data_tablespace />
-    <index_tablespace />
+    <database>${DB_SAIDA}</database>
+    <port>${DB_SAIDA_PORT}</port>
+    <username>${DB_SAIDA_USER}</username>
+    <password>${DB_SAIDA_PASS}</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
     <attributes>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>5433</attribute>
-      </attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>${DB_SAIDA_PORT}</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>lixo</name>
+    <server>${DB_LIXO_HOST}</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>${DB_LIXO}</database>
+    <port>${DB_LIXO_PORT}</port>
+    <username>${DB_LIXO_USER}</username>
+    <password>${DB_LIXO_PASS}</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>${DB_LIXO_PORT}</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
   <order>
@@ -492,7 +526,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <connection>final</connection>
+    <connection>saida</connection>
     <commit>100</commit>
     <update_bypassed>Y</update_bypassed>
     <lookup>
@@ -546,7 +580,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <connection>old</connection>
+    <connection>entrada</connection>
     <sql>SELECT
   "Author (Contraction)" AS short_name
 , "Form Expand" AS full_name
