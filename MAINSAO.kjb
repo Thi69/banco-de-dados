@@ -315,7 +315,7 @@
       <attributes />
       <specification_method>filename</specification_method>
       <job_object_id />
-      <filename>/home/marcus/trabalho-banco-dados/marcus/PessoasJob.kjb</filename>
+      <filename>/home/marcus/trabalho-banco-dados/Pessoas/PessoasJob.kjb</filename>
       <jobname />
       <directory />
       <arg_from_previous>N</arg_from_previous>
@@ -352,7 +352,7 @@
       <attributes />
       <specification_method>filename</specification_method>
       <job_object_id />
-      <filename>/home/marcus/trabalho-banco-dados/naufal/Especime.kjb</filename>
+      <filename>/home/marcus/trabalho-banco-dados/Especies/Especime.kjb</filename>
       <jobname />
       <directory />
       <arg_from_previous>N</arg_from_previous>
