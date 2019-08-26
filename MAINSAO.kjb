@@ -304,7 +304,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>192</xloc>
+      <xloc>80</xloc>
       <yloc>176</yloc>
       <attributes_kjc />
     </entry>
@@ -382,11 +382,37 @@
       <yloc>176</yloc>
       <attributes_kjc />
     </entry>
+    <entry>
+      <name>Set variables</name>
+      <description />
+      <type>SET_VARIABLES</type>
+      <attributes />
+      <replacevars>N</replacevars>
+      <filename>${Internal.Entry.Current.Directory}/env.properties</filename>
+      <file_variable_type>CURRENT_JOB</file_variable_type>
+      <fields>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>192</xloc>
+      <yloc>176</yloc>
+      <attributes_kjc />
+    </entry>
   </entries>
   <hops>
     <hop>
+      <from>Pessoas</from>
+      <to>Especimes</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
       <from>Start</from>
-      <to>Pessoas</to>
+      <to>Set variables</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -394,8 +420,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Pessoas</from>
-      <to>Especimes</to>
+      <from>Set variables</from>
+      <to>Pessoas</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

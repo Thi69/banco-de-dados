@@ -478,7 +478,7 @@
       <type>SET_VARIABLES</type>
       <attributes />
       <replacevars>N</replacevars>
-      <filename>${Internal.Entry.Current.Directory}/../Especimes/env.properties</filename>
+      <filename>${Internal.Entry.Current.Directory}/env.properties</filename>
       <file_variable_type>CURRENT_JOB</file_variable_type>
       <fields>
       </fields>
