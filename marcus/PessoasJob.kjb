@@ -304,8 +304,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>32</xloc>
-      <yloc>32</yloc>
+      <xloc>336</xloc>
+      <yloc>304</yloc>
       <attributes_kjc />
     </entry>
     <entry>
@@ -316,8 +316,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>464</xloc>
-      <yloc>432</yloc>
+      <xloc>928</xloc>
+      <yloc>704</yloc>
       <attributes_kjc />
     </entry>
     <entry>
@@ -354,8 +354,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>176</xloc>
-      <yloc>32</yloc>
+      <xloc>640</xloc>
+      <yloc>304</yloc>
       <attributes_kjc />
     </entry>
     <entry>
@@ -392,8 +392,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>176</xloc>
-      <yloc>160</yloc>
+      <xloc>640</xloc>
+      <yloc>432</yloc>
       <attributes_kjc />
     </entry>
     <entry>
@@ -430,8 +430,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>176</xloc>
-      <yloc>304</yloc>
+      <xloc>640</xloc>
+      <yloc>576</yloc>
       <attributes_kjc />
     </entry>
     <entry>
@@ -468,21 +468,29 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>176</xloc>
-      <yloc>432</yloc>
+      <xloc>640</xloc>
+      <yloc>704</yloc>
+      <attributes_kjc />
+    </entry>
+    <entry>
+      <name>Set variables</name>
+      <description />
+      <type>SET_VARIABLES</type>
+      <attributes />
+      <replacevars>N</replacevars>
+      <filename>${Internal.Entry.Current.Directory}/../naufal/env.properties</filename>
+      <file_variable_type>CURRENT_JOB</file_variable_type>
+      <fields>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>464</xloc>
+      <yloc>304</yloc>
       <attributes_kjc />
     </entry>
   </entries>
   <hops>
-    <hop>
-      <from>Start</from>
-      <to>PessoasFinal</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
     <hop>
       <from>PessoasFinal</from>
       <to>PessoasEmSubFamily</to>
@@ -513,6 +521,24 @@
     <hop>
       <from>PessoasEmLivros</from>
       <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Start</from>
+      <to>Set variables</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Set variables</from>
+      <to>PessoasFinal</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

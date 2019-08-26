@@ -550,7 +550,7 @@
     <sql>SELECT
   "Author (Contraction)" AS short_name
 , "Form Expand" AS full_name
-FROM author
+FROM ${DB_ENTRADA_SCHEMA}.author
 ORDER BY full_name ASC
 </sql>
     <limit>0</limit>
