@@ -294,7 +294,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>{Internal.Entry.Current.Directory}/${Internal.Job.Name}/Especies2.ktr</filename>
+      <filename>{Internal.Entry.Current.Directory}/${Internal.Job.Name}/Especies.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -332,7 +332,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>{Internal.Entry.Current.Directory}/${Internal.Job.Name}/Subgenero.ktr</filename>
+      <filename>{Internal.Entry.Current.Directory}/${Internal.Job.Name}/Subgeneros.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -370,7 +370,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>{Internal.Entry.Current.Directory}/${Internal.Job.Name}/Genero.ktr</filename>
+      <filename>{Internal.Entry.Current.Directory}/${Internal.Job.Name}/Generos.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -408,7 +408,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>{Internal.Entry.Current.Directory}/${Internal.Job.Name}/Tribo.ktr</filename>
+      <filename>{Internal.Entry.Current.Directory}/${Internal.Job.Name}/Subtribos.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -446,7 +446,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>{Internal.Entry.Current.Directory}/${Internal.Job.Name}/Tribo.ktr</filename>
+      <filename>{Internal.Entry.Current.Directory}/${Internal.Job.Name}/Tribos.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -484,7 +484,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>{Internal.Entry.Current.Directory}/${Internal.Job.Name}/Supertribo.ktr</filename>
+      <filename>{Internal.Entry.Current.Directory}/${Internal.Job.Name}/Supertribos.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -594,7 +594,7 @@
       <attributes/>
       <replacevars>N</replacevars>
       <filename>${Internal.Entry.Current.Directory}/env.properties</filename>
-      <file_variable_type>JVM</file_variable_type>
+      <file_variable_type>CURRENT_JOB</file_variable_type>
       <fields>
       </fields>
       <parallel>N</parallel>

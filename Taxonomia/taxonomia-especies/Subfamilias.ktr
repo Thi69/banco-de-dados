@@ -521,10 +521,53 @@
     </hop>
     <hop>
       <from>Unique rows (HashSet)</from>
-      <to>Table output</to>
+      <to>Insert / update</to>
       <enabled>Y</enabled>
     </hop>
   </order>
+  <step>
+    <name>Insert / update</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>saida</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema>${DB_SAIDA_SCHEMA}</schema>
+      <table>subfamilias</table>
+      <key>
+        <name>subfamily</name>
+        <field>nome</field>
+        <condition>= ~NULL</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>nome</name>
+        <rename>subfamily</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>880</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Select values</name>
     <type>SelectValues</type>
@@ -726,54 +769,6 @@
     </GUI>
   </step>
   <step>
-    <name>Table output</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>saida</connection>
-    <schema>public</schema>
-    <table>subfamilias</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>nome</column_name>
-        <stream_name>subfamily</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>944</xloc>
-      <yloc>240</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>Unique rows (HashSet)</name>
     <type>UniqueRowsByHashSet</type>
     <description/>
@@ -821,7 +816,7 @@
     <sql>SELECT
   subfam
 
-FROM "asenjo(old)"."Especies de Staphylinidos"
+FROM ${DB_ENTRADA_SCHEMA}."Especies de Staphylinidos"
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -857,7 +852,7 @@ FROM "asenjo(old)"."Especies de Staphylinidos"
     <sql>SELECT
   subfamily
 
-FROM "asenjo(old)".genera
+FROM ${DB_ENTRADA_SCHEMA}.genera
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -893,7 +888,7 @@ FROM "asenjo(old)".genera
     <sql>SELECT
  subfamily
 
-FROM "asenjo(old)"."Record of Staphys 2"
+FROM ${DB_ENTRADA_SCHEMA}."Record of Staphys 2"
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -929,7 +924,7 @@ FROM "asenjo(old)"."Record of Staphys 2"
     <sql>SELECT
  subfamily
 
-FROM "asenjo(old)"."List Subfamily"
+FROM ${DB_ENTRADA_SCHEMA}."List Subfamily"
 </sql>
     <limit>0</limit>
     <lookup/>

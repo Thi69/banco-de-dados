@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>Tribo</name>
+    <name>Subtribo</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,9 +427,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2019/08/26 11:51:45.473</created_date>
+    <created_date>2019/08/26 12:46:48.905</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2019/08/26 11:51:45.473</modified_date>
+    <modified_date>2019/08/26 12:46:48.905</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -475,7 +475,7 @@
   </connection>
   <order>
     <hop>
-      <from>entrada-tribo</from>
+      <from>genera-subtribo</from>
       <to>Sort rows</to>
       <enabled>Y</enabled>
     </hop>
@@ -485,13 +485,8 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>subfamilia-fk</from>
+      <from>tribo-fk</from>
       <to>Sort rows 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Unique rows (HashSet)</from>
-      <to>Merge join</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -500,22 +495,12 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>supetribo-fk</from>
-      <to>Sort rows 3</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort rows 3</from>
-      <to>Merge join 2</to>
+      <from>Unique rows (HashSet)</from>
+      <to>Merge join</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Merge join</from>
-      <to>Merge join 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Merge join 2</from>
       <to>Insert / update</to>
       <enabled>Y</enabled>
     </hop>
@@ -535,32 +520,22 @@
     <commit>100</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
-      <schema>${DB_SAIDA_SCHEMA}</schema>
-      <table>tribos</table>
+      <schema>public</schema>
+      <table>subtribos</table>
       <key>
-        <name>tribu</name>
+        <name>subtribu</name>
         <field>nome</field>
         <condition>= ~NULL</condition>
         <name2/>
       </key>
       <value>
         <name>nome</name>
-        <rename>tribu</rename>
+        <rename>subtribu</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>id_subfamilia</name>
-        <rename>id_subfamilia</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>id_familia</name>
-        <rename>id_familia</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>id_supertribo</name>
-        <rename>id_supertribo</rename>
+        <name>id_tribo</name>
+        <rename>id_tribo</rename>
         <update>Y</update>
       </value>
     </lookup>
@@ -573,14 +548,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>880</xloc>
-      <yloc>368</yloc>
+      <xloc>752</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Merge join</name>
-    <type>MergeJoin</type>
+    <name>Unique rows (HashSet)</name>
+    <type>UniqueRowsByHashSet</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -589,15 +564,14 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <join_type>RIGHT OUTER</join_type>
-    <step1>Sort rows 2</step1>
-    <step2>Unique rows (HashSet)</step2>
-    <keys_1>
-      <key>nome</key>
-    </keys_1>
-    <keys_2>
-      <key>subfamily</key>
-    </keys_2>
+    <store_values>N</store_values>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>
+      <field>
+        <name>subtribu</name>
+      </field>
+    </fields>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -607,14 +581,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
-      <yloc>304</yloc>
+      <xloc>496</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Merge join 2</name>
-    <type>MergeJoin</type>
+    <name>genera-subtribo</name>
+    <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -623,15 +597,17 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <join_type>LEFT OUTER</join_type>
-    <step1>Merge join</step1>
-    <step2>Sort rows 3</step2>
-    <keys_1>
-      <key>id_subfamilia</key>
-    </keys_1>
-    <keys_2>
-      <key>id_subfamilia</key>
-    </keys_2>
+    <connection>entrada</connection>
+    <sql>SELECT
+ tribu
+, subtribu
+FROM "asenjo(old)".genera
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -641,8 +617,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>368</yloc>
+      <xloc>304</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -666,7 +642,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>tribu</name>
+        <name>subtribu</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -683,8 +659,42 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
-      <yloc>240</yloc>
+      <xloc>400</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Merge join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>LEFT OUTER</join_type>
+    <step1>Sort rows 2</step1>
+    <step2>Unique rows (HashSet)</step2>
+    <keys_1>
+      <key>nome</key>
+    </keys_1>
+    <keys_2>
+      <key>tribu</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -708,7 +718,15 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>id_subfamilia</name>
+        <name>id_tribo</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>nome</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -725,124 +743,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
-      <yloc>336</yloc>
+      <xloc>400</xloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Sort rows 3</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>id_supertribo</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>352</xloc>
-      <yloc>448</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Unique rows (HashSet)</name>
-    <type>UniqueRowsByHashSet</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <store_values>N</store_values>
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <error_description/>
-    <fields>
-      <field>
-        <name>tribu</name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>464</xloc>
-      <yloc>240</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>entrada-tribo</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>entrada</connection>
-    <sql>SELECT
-  subfamily
-, tribu
-FROM ${DB_ENTRADA_SCHEMA}.genera
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>256</xloc>
-      <yloc>240</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>subfamilia-fk</name>
+    <name>tribo-fk</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -854,10 +761,9 @@ FROM ${DB_ENTRADA_SCHEMA}.genera
     </partitioning>
     <connection>saida</connection>
     <sql>SELECT
-  id_subfamilia
+  id_tribo
 , nome
-, id_familia
-FROM ${DB_SAIDA_SCHEMA}.subfamilias
+FROM "public".tribos
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -873,45 +779,8 @@ FROM ${DB_SAIDA_SCHEMA}.subfamilias
       </output>
     </remotesteps>
     <GUI>
-      <xloc>256</xloc>
-      <yloc>336</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>supetribo-fk</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>saida</connection>
-    <sql>SELECT
-  id_supertribo
-, nome
-, id_subfamilia
-FROM ${DB_SAIDA_SCHEMA}.supertribos
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>256</xloc>
-      <yloc>448</yloc>
+      <xloc>304</xloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
