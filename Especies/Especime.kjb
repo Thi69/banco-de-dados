@@ -291,7 +291,6 @@
       <name>START</name>
       <description />
       <type>SPECIAL</type>
-      <attributes />
       <start>Y</start>
       <dummy>N</dummy>
       <repeat>N</repeat>
@@ -305,18 +304,16 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>80</xloc>
-      <yloc>160</yloc>
-      <attributes_kjc />
+      <xloc>64</xloc>
+      <yloc>48</yloc>
     </entry>
     <entry>
       <name>localidades</name>
       <description />
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
       <trans_object_id />
-      <filename>${Internal.Entry.Current.Directory}/${Internal.Job.Name}/Localidades.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/transformations/Localidades.ktr</filename>
       <transname />
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -343,18 +340,16 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>336</xloc>
-      <yloc>160</yloc>
-      <attributes_kjc />
+      <xloc>368</xloc>
+      <yloc>48</yloc>
     </entry>
     <entry>
       <name>endereco</name>
       <description />
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
       <trans_object_id />
-      <filename>${Internal.Entry.Current.Directory}/${Internal.Job.Name}/Endereco.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/transformations/Endereco.ktr</filename>
       <transname />
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -381,18 +376,16 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>496</xloc>
-      <yloc>160</yloc>
-      <attributes_kjc />
+      <xloc>528</xloc>
+      <yloc>48</yloc>
     </entry>
     <entry>
       <name>instituicao</name>
       <description />
       <type>TRANS</type>
-      <attributes />
       <specification_method>filename</specification_method>
       <trans_object_id />
-      <filename>${Internal.Entry.Current.Directory}/${Internal.Job.Name}/Instituicao.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/transformations/Instituicao.ktr</filename>
       <transname />
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -419,27 +412,23 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>640</xloc>
-      <yloc>160</yloc>
-      <attributes_kjc />
+      <xloc>672</xloc>
+      <yloc>48</yloc>
     </entry>
     <entry>
       <name>Success</name>
       <description />
       <type>SUCCESS</type>
-      <attributes />
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>784</xloc>
-      <yloc>160</yloc>
-      <attributes_kjc />
+      <xloc>832</xloc>
+      <yloc>48</yloc>
     </entry>
     <entry>
       <name>Set variables</name>
       <description />
       <type>SET_VARIABLES</type>
-      <attributes />
       <replacevars>N</replacevars>
       <filename>${Internal.Entry.Current.Directory}/env.properties</filename>
       <file_variable_type>CURRENT_JOB</file_variable_type>
@@ -448,20 +437,18 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>208</xloc>
-      <yloc>160</yloc>
-      <attributes_kjc />
+      <xloc>224</xloc>
+      <yloc>48</yloc>
     </entry>
     <entry>
       <name>especime</name>
       <description />
       <type>TRANS</type>
-      <attributes />
       <specification_method>rep_name</specification_method>
       <trans_object_id />
       <filename />
       <transname>Especime.ktr</transname>
-      <directory>${Internal.Entry.Current.Directory}/${Internal.Job.Name}</directory>
+      <directory>${Internal.Entry.Current.Directory}/transformations</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -487,9 +474,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
-      <yloc>368</yloc>
-      <attributes_kjc />
+      <xloc>512</xloc>
+      <yloc>192</yloc>
     </entry>
   </entries>
   <hops>
