@@ -154,22 +154,22 @@
     <column id="COL43" populated="true" UUID="86f181a6-bf66-411b-91c2-c6a744beac95" autoIncrement="false" autoIncrementSequenceName="especimes_estado_conservacao_seq" defaultValue="" name="estado_conservacao" nullable="1" physicalName="estado_conservacao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL44" populated="true" UUID="52d1c75e-bada-4b15-8341-b0cf94b5a61f" autoIncrement="false" autoIncrementSequenceName="especimes_ano_inicio_coleta_seq" defaultValue="" name="ano_inicio_coleta" nullable="1" physicalName="ano_inicio_coleta" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL44" populated="true" UUID="d847cb69-2389-40e8-a7f0-b4587c9920b9" autoIncrement="false" autoIncrementSequenceName="especimes_mes_inicio_coleta_seq" defaultValue="" name="mes_inicio_coleta" nullable="1" physicalName="mes_inicio_coleta" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL45" populated="true" UUID="d847cb69-2389-40e8-a7f0-b4587c9920b9" autoIncrement="false" autoIncrementSequenceName="especimes_mes_inicio_coleta_seq" defaultValue="" name="mes_inicio_coleta" nullable="1" physicalName="mes_inicio_coleta" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL45" populated="true" UUID="8b4f6457-bba5-4a3a-9615-43185647a567" autoIncrement="false" autoIncrementSequenceName="especimes_dia_inicio_coleta_seq" defaultValue="" name="dia_inicio_coleta" nullable="1" physicalName="dia_inicio_coleta" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL46" populated="true" UUID="8b4f6457-bba5-4a3a-9615-43185647a567" autoIncrement="false" autoIncrementSequenceName="especimes_dia_inicio_coleta_seq" defaultValue="" name="dia_inicio_coleta" nullable="1" physicalName="dia_inicio_coleta" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL46" populated="true" UUID="d94210a8-c57a-44ba-9359-adbf718eae40" autoIncrement="false" autoIncrementSequenceName="especimes_dia_fim_coleta_seq" defaultValue="" name="dia_fim_coleta" nullable="1" physicalName="dia_fim_coleta" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL47" populated="true" UUID="d94210a8-c57a-44ba-9359-adbf718eae40" autoIncrement="false" autoIncrementSequenceName="especimes_dia_fim_coleta_seq" defaultValue="" name="dia_fim_coleta" nullable="1" physicalName="dia_fim_coleta" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL47" populated="true" UUID="b6b0723d-a2ed-4c85-8b75-7c4a1e7062d5" autoIncrement="false" autoIncrementSequenceName="especimes_mes_fim_coleta_seq" defaultValue="" name="mes_fim_coleta" nullable="1" physicalName="mes_fim_coleta" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL48" populated="true" UUID="b6b0723d-a2ed-4c85-8b75-7c4a1e7062d5" autoIncrement="false" autoIncrementSequenceName="especimes_mes_fim_coleta_seq" defaultValue="" name="mes_fim_coleta" nullable="1" physicalName="mes_fim_coleta" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL48" populated="true" UUID="344566b7-1c49-41e5-a323-728e8aca7283" autoIncrement="false" autoIncrementSequenceName="especimes_ano_coleta_seq" defaultValue="" name="ano_coleta" nullable="1" physicalName="ano_coleta" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL49" populated="true" UUID="344566b7-1c49-41e5-a323-728e8aca7283" autoIncrement="false" autoIncrementSequenceName="especimes_ano_fim_coleta_seq" defaultValue="" name="ano_fim_coleta" nullable="1" physicalName="ano_fim_coleta" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL49" populated="true" UUID="7b95b6fd-3900-480e-abfd-e9910f44b156" autoIncrement="false" autoIncrementSequenceName="especimes_decada_fim_coleta_seq" defaultValue="" name="decada_coleta" nullable="1" physicalName="decada_coleta" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="16" userDefinedTypeUUID="a26374aa-3026-4bb8-b564-eb2e186dfa5d" >
      <remarks></remarks>
     </column>
     <column id="COL50" populated="true" UUID="25cce66e-7d9d-4786-834c-2ecb493048d6" autoIncrement="false" autoIncrementSequenceName="especimes_latitude_seq" defaultValue="" name="latitude" nullable="1" physicalName="latitude" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
@@ -871,7 +871,7 @@
  <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="0.8408964152537128" viewportX="0" viewportY="1582" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="0.8408964152537128" viewportX="277" viewportY="850" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB1" x="521" y="20" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB18" x="1127" y="349" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB26" x="463" y="1528" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>

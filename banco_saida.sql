@@ -2,7 +2,6 @@ DROP SCHEMA IF EXISTS public CASCADE;
 
 CREATE SCHEMA public;
 
-
 CREATE SEQUENCE public.localidades_id_endereco_seq_1_1;
 
 CREATE TABLE public.localidades (
@@ -265,12 +264,12 @@ CREATE TABLE public.especimes (
                 sexo VARCHAR,
                 observacoes VARCHAR,
                 estado_conservacao VARCHAR,
-                ano_inicio_coleta INTEGER,
                 mes_inicio_coleta INTEGER,
                 dia_inicio_coleta INTEGER,
                 dia_fim_coleta INTEGER,
                 mes_fim_coleta INTEGER,
-                ano_fim_coleta INTEGER,
+                ano_coleta VARCHAR,
+                decada_coleta BOOLEAN,
                 latitude DOUBLE PRECISION,
                 elevacao_minima DOUBLE PRECISION,
                 elevacao_maxima DOUBLE PRECISION,
